@@ -1,0 +1,7 @@
+.*
+!.eslintrc*
+!.git*
+!/.npmrc
+/*.cpuprofile
+/coverage/
+/node_modules/

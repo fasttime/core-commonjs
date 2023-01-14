@@ -1,0 +1,36 @@
+{
+  "name": "core-commonjs",
+  "version": "0.0.1",
+  "description": "A polyfill for `require`, `__dirname` and `__filename` in ES modules in Node.js",
+  "license": "ISC",
+  "author": "Francesco Trotta <ft@fasttime.org> (https://github.com/fasttime)",
+  "files": [],
+  "main": "core-commonjs.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fasttime/core-commonjs.git"
+  },
+  "scripts": {
+    "build": "npm install && npm run build-no-install",
+    "build-no-install": "npm run clean && npm run lint && npm run coverage",
+    "clean": "node ./dev/clean.mjs",
+    "coverage": "node ./dev/coverage.mjs",
+    "lint": "eslint . --format compact --ignore-path .gitignore",
+    "test": "mocha --check-leaks test/*.spec.mjs"
+  },
+  "devDependencies": {
+    "@origin-1/eslint-config": "latest",
+    "c8js": "latest",
+    "mocha": "latest"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "exports": {
+    ".": "./core-commonjs.js",
+    "./package.json": "./package.json"
+  }
+}
